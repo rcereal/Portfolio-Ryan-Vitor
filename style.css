@@ -17,6 +17,11 @@ body {
   color: orangered !important;
 }
 
+.centralizar-botao {
+  text-align: center;
+  margin-top: 20px;
+}
+
 section {
   padding: 60px 20px;
 }
