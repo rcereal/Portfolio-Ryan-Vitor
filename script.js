@@ -1,32 +1,25 @@
-// Inicializa o EmailJS com a chave pública
+// Inicializa o EmailJS com sua Public Key
 (function () {
-  emailjs.init("3ezdfNr4mqwgjAM73"); // Verifique se essa chave está correta
+  emailjs.init("3ezdfNr4mqwgjAM73");
 })();
 
-// Manipulador de envio do formulário
+// Captura o submit do formulário e envia via EmailJS
 document
   .getElementById("contact-form")
   .addEventListener("submit", function (e) {
-    e.preventDefault(); // Impede o envio padrão
+    e.preventDefault();
 
-    // Exibe mensagem de carregamento
-    document.getElementById("form-message").innerText = "Enviando...";
-
-    // Envia os dados para o EmailJS
     emailjs.sendForm("service_9ysl56x", "template_xy8bonn", this).then(
       function () {
-        // Sucesso no envio
         document.getElementById("form-message").innerText =
           "Mensagem enviada com sucesso!";
       },
       function (error) {
-        // Caso ocorra um erro
-        console.error("Erro ao enviar:", error);
         document.getElementById("form-message").innerText =
           "Erro ao enviar. Tente novamente.";
+        console.error("Erro no envio:", error);
       }
     );
 
-    // Limpa o formulário após envio
     this.reset();
   });
