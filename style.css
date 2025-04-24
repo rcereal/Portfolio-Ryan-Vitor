@@ -66,12 +66,12 @@ footer {
 }
 
 .footer-icons i {
-  font-size: 1.5rem; /* aumenta o tamanho dos ícones */
+  font-size: 1.5rem;
   transition: transform 0.2s;
 }
 
 .footer-icons i:hover {
-  transform: scale(1.2); /* efeito de zoom no hover */
+  transform: scale(1.2);
 }
 
 #projetos {
