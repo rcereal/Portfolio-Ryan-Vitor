@@ -1,13 +1,13 @@
 "use client";
 import { motion } from "framer-motion";
-import { Github, ExternalLink } from "lucide-react";
-import { projects } from "@/data/projects";
+import { Github } from "lucide-react";
+import { projects } from "@/data/projects"; // <--- Importando os dados do arquivo externo
 
 export default function Projects() {
   return (
     <section id="projetos" className="py-20 bg-[#030712] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Cabeçalho da Seção */}
+        {/* Cabeçalho */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -24,7 +24,7 @@ export default function Projects() {
           </p>
         </motion.div>
 
-        {/* Grid de Projetos */}
+        {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <motion.div
@@ -35,19 +35,17 @@ export default function Projects() {
               transition={{ delay: index * 0.1 }}
               className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-indigo-500/30 transition-all group flex flex-col"
             >
-              {/* Área do Vídeo */}
               <div className="aspect-video w-full bg-black relative">
                 <video
                   src={project.videoUrl}
                   controls
                   className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
-                  poster="/img/perfil.jpg"
+                  poster={project.posterUrl} // <--- AQUI ESTÁ A MÁGICA (Dinâmico)
                 >
                   Seu navegador não suporta vídeos.
                 </video>
               </div>
 
-              {/* Conteúdo do Card */}
               <div className="p-6 flex flex-col flex-grow">
                 <h3 className="text-2xl font-bold text-white mb-2">
                   {project.title}
@@ -56,7 +54,6 @@ export default function Projects() {
                   {project.description}
                 </p>
 
-                {/* Tecnologias */}
                 <div className="flex flex-wrap gap-2 mb-6">
                   {project.tech.map((tech) => (
                     <span
@@ -68,7 +65,6 @@ export default function Projects() {
                   ))}
                 </div>
 
-                {/* Botões */}
                 <div className="flex gap-4 mt-auto">
                   <a
                     href={project.repoUrl}
@@ -79,7 +75,6 @@ export default function Projects() {
                     <Github size={18} />
                     Código
                   </a>
-                  {/* Se tiver link de demo no futuro, adicione aqui */}
                 </div>
               </div>
             </motion.div>

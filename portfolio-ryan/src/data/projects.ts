@@ -1,4 +1,15 @@
-export const projects = [
+// Define o formato exato que um projeto deve ter para o TypeScript não reclamar
+export interface ProjectProps {
+  id: number;
+  title: string;
+  description: string;
+  tech: string[];
+  videoUrl: string;
+  repoUrl: string;
+  posterUrl: string; // Campo obrigatório para a imagem de capa
+}
+
+export const projects: ProjectProps[] = [
   {
     id: 1,
     title: "Indústrias Wayne ERP",
@@ -7,6 +18,7 @@ export const projects = [
     tech: ["Django", "Python", "MySQL", "Bootstrap"],
     videoUrl: "/videos/Sistema Industrias Wayne.mp4",
     repoUrl: "https://github.com/rcereal/SGS_IndustriasWayne",
+    posterUrl: "/img/wayne-preview.png",
   },
   {
     id: 2,
@@ -16,6 +28,7 @@ export const projects = [
     tech: ["React", "Django API", "Pandas", "Chart.js"],
     videoUrl: "/videos/Analytike.mp4",
     repoUrl: "https://github.com/rcereal/Analytike",
+    posterUrl: "/img/analytike-preview.png",
   },
   {
     id: 3,
@@ -25,6 +38,7 @@ export const projects = [
     tech: ["Django", "Bootstrap", "JavaScript", "SQLite"],
     videoUrl: "/videos/Pizzaria-tanabraza.mp4",
     repoUrl: "https://github.com/rcereal/pizzaria-tanabraza",
+    posterUrl: "/img/pizza-preview.png",
   },
   {
     id: 4,
@@ -34,6 +48,7 @@ export const projects = [
     tech: ["Python", "Flet", "Rest API"],
     videoUrl: "/videos/Cadastro de Produtos.mp4",
     repoUrl: "https://github.com/rcereal/Projeto-de-Cadastro-de-Produtos",
+    posterUrl: "/img/inventory-preview.png",
   },
 ];
 
