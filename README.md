@@ -1,36 +1,91 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Ryan Vitor - Portfólio Full Stack
 
-## Getting Started
+![Project Cover](./public/img/cover.png)
 
-First, run the development server:
+> Portfólio moderno, interativo e performático desenvolvido para apresentar projetos de desenvolvimento Full Stack.
+
+[![Deploy with Vercel](https://vercel.com/button)](https://portfolio-ryan-vitor-coral.vercel.app/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+## 🌐 Demo Online
+
+👉 **Acesse agora:** [portfolio-ryan-vitor-coral.vercel.app](https://portfolio-ryan-vitor-coral.vercel.app/)
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+Este projeto foi construído utilizando as melhores práticas do desenvolvimento web moderno:
+
+- **Core:** [Next.js 14](https://nextjs.org/) (App Router), [React](https://react.dev/), [TypeScript](https://www.typescriptlang.org/)
+- **Estilização:** [Tailwind CSS](https://tailwindcss.com/)
+- **Animações:** [Framer Motion](https://www.framer.com/motion/)
+- **Ícones:** [Lucide React](https://lucide.dev/)
+- **Email:** Integração com [EmailJS](https://www.emailjs.com/) para formulário de contato.
+- **Deploy:** Vercel.
+
+## ✨ Funcionalidades
+
+- **⚡ Performance:** Aplicação SPA (Single Page Application) otimizada para SEO e carregamento rápido.
+- **🎨 UI Moderna:** Design System consistente com tema Dark, Glassmorphism (efeito de vidro) e gradientes.
+- **📱 Responsividade:** Layout totalmente adaptável para Mobile, Tablet e Desktop.
+- **🎥 Previews de Projetos:** Cards interativos com reprodução de vídeo e capas personalizadas.
+- **📧 Contato Funcional:** Formulário conectado diretamente ao e-mail via API.
+
+---
+
+## 🚀 Como rodar o projeto localmente
+
+Siga os passos abaixo para testar o projeto na sua máquina:
+
+### 1. Clone o repositório
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone [https://github.com/SEU_USUARIO/portfolio-v2.git](https://github.com/SEU_USUARIO/portfolio-v2.git)
+cd portfolio-v2
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Instale as dependências
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```Bash
+npm install
+# ou
+yarn install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 3. Rode o servidor de desenvolvimento
 
-## Learn More
+```Bash
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+Acesse http://localhost:3000 no seu navegador para ver o resultado.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+📂 Estrutura de Pastas
+Uma visão geral da organização do código:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```Bash
+portfolio-ryan/
+├── public/          # Assets estáticos (imagens, vídeos, favicon)
+│   ├── img/         # Fotos de perfil e thumbnails dos projetos
+│   └── videos/      # Vídeos de demonstração
+├── src/
+│   ├── app/         # Páginas e Layout (Next.js App Router)
+│   ├── components/  # Componentes Reutilizáveis (Navbar, Hero, Projects, etc.)
+│   ├── data/        # Dados estáticos (Lista de projetos e infos do perfil)
+│   └── ...
+└── ...
+```
 
-## Deploy on Vercel
+👨‍💻 Autor
+Ryan Vitor
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Desenvolvedor Full Stack apaixonado por transformar problemas complexos em interfaces intuitivas.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+💼 [LinkedIn - ](https://www.linkedin.com/in/ryan-vitor-09524a246/)
+
+🐙 [GitHub](https://github.com/rcereal)
+
+📱 [WhatsApp](https://api.whatsapp.com/send/?phone=5571983971269&text&type=phone_number&app_absent=0)
+
+Desenvolvido com prazer e muito código.
