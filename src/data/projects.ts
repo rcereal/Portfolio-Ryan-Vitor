@@ -50,6 +50,16 @@ export const projects: ProjectProps[] = [
     repoUrl: "https://github.com/rcereal/Projeto-de-Cadastro-de-Produtos",
     posterUrl: "/img/inventory-preview.png",
   },
+  {
+    id: 5,
+    title: "Realtime Restaurant App",
+    description:
+      "Sistema de gestão de pedidos em tempo real (KDS + Delivery). Sincronia instantânea entre cozinha e cliente via Supabase e gestão de estado global otimizada.",
+    tech: ["Next.js 14", "Supabase", "Tailwind CSS", "Zustand"],
+    videoUrl: "/videos/video-restaurante.mp4",
+    repoUrl: "https://github.com/rcereal/Restaurante-app",
+    posterUrl: "/img/restaurante-preview.png",
+  },
 ];
 
 export const profileData = {

@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { Github } from "lucide-react";
-import { projects } from "@/data/projects"; // <--- Importando os dados do arquivo externo
+import { projects } from "@/data/projects";
 
 export default function Projects() {
   return (
@@ -24,61 +24,68 @@ export default function Projects() {
           </p>
         </motion.div>
 
-        {/* Grid */}
+        {/* Grid Inteligente */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
-            <motion.div
-              key={project.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-indigo-500/30 transition-all group flex flex-col"
-            >
-              <div className="aspect-video w-full bg-black relative">
-                <video
-                  src={project.videoUrl}
-                  controls
-                  className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
-                  poster={project.posterUrl} // <--- AQUI ESTÁ A MÁGICA (Dinâmico)
-                >
-                  Seu navegador não suporta vídeos.
-                </video>
-              </div>
+          {projects.map((project, index) => {
+            const isLastAndOdd =
+              projects.length % 2 !== 0 && index === projects.length - 1;
 
-              <div className="p-6 flex flex-col flex-grow">
-                <h3 className="text-2xl font-bold text-white mb-2">
-                  {project.title}
-                </h3>
-                <p className="text-gray-400 mb-6 flex-grow">
-                  {project.description}
-                </p>
-
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {project.tech.map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-3 py-1 bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs rounded-full"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-
-                <div className="flex gap-4 mt-auto">
-                  <a
-                    href={project.repoUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 flex items-center justify-center gap-2 bg-white text-black py-2 rounded-lg font-medium hover:bg-gray-200 transition-colors"
+            return (
+              <motion.div
+                key={project.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className={`bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-indigo-500/30 transition-all group flex flex-col 
+                  ${isLastAndOdd ? "md:col-span-2 md:w-[calc(50%-1rem)] md:justify-self-center" : ""} 
+                `}
+              >
+                <div className="aspect-video w-full bg-black relative">
+                  <video
+                    src={project.videoUrl}
+                    controls
+                    className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
+                    poster={project.posterUrl}
                   >
-                    <Github size={18} />
-                    Código
-                  </a>
+                    Seu navegador não suporta vídeos.
+                  </video>
                 </div>
-              </div>
-            </motion.div>
-          ))}
+
+                <div className="p-6 flex flex-col flex-grow">
+                  <h3 className="text-2xl font-bold text-white mb-2">
+                    {project.title}
+                  </h3>
+                  <p className="text-gray-400 mb-6 flex-grow">
+                    {project.description}
+                  </p>
+
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {project.tech.map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-3 py-1 bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs rounded-full"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="flex gap-4 mt-auto">
+                    <a
+                      href={project.repoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 flex items-center justify-center gap-2 bg-white text-black py-2 rounded-lg font-medium hover:bg-gray-200 transition-colors"
+                    >
+                      <Github size={18} />
+                      Código
+                    </a>
+                  </div>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
